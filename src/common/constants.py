@@ -1,0 +1,9 @@
+
+HOST, PORT = ("localhost", 8080)
+
+REQ_HEADER_SEPERATOR = b"\r\n\r\n"
+HEADER_SEPERATOR = b"\r\n"
+HTTP_VERSION_SEPERATOR = "/"
+
+HTTP_CONTENT_LENGTH = "Content-Length"
+HTTP_TRANSFER_ENCODING ="Transfer-Encoding"
