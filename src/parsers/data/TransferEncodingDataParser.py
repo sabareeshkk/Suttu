@@ -1,15 +1,16 @@
-from src.parsers.data.HttpDataParser import HttpDataParser
+from src.parsers.data.HttpRequestDataParser import HttpRequestDataParser
 
-class TransferEncodingParser(HttpDataParser):
+class TransferEncodingParser(HttpRequestDataParser):
     """
     parse request data based on transfer encoding (chunked)
     # TODO: other formats also supported like compress, deflate, gzip
     """
-    def parse(self, data):
+    def parse(self):
         """
         Extract the body data using chunked transfer encoding.
         :return: The extracted data as bytes.
         """
+        data = self.parse_data()
         extracted_data = b""
         while True:
 
@@ -44,4 +45,5 @@ class TransferEncodingParser(HttpDataParser):
                     self.connection.recv(2 - len(data[chunk_data_end_pos:]))
                     data = b""
             extracted_data += chunk_data
+
         return extracted_data
