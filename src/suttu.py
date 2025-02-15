@@ -1,7 +1,7 @@
 import socket
 import threading
 
-from src.app.app import accept_connection
+from src.app.app import App
 from src.common import constants
 
 sock =  socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -9,13 +9,14 @@ sock.bind((constants.HOST, constants.PORT))
 sock.listen(5)
 print(f"server {constants.HOST} listening on port {constants.PORT}")
 
-class Suttu:
+class Suttu(App):
     """
     Initial entry point of the application
     """
+
     def __init__(self):
         # TODO:  make it accept __name__ for static and other files serving
-        self.run()
+        self.router_map = {}
 
     def run(self):
 
@@ -24,7 +25,7 @@ class Suttu:
             print("waiting for connection")
             connection, client_address = sock.accept()
             # Creating a thread with arguments
-            thread = threading.Thread(target=accept_connection, args=(connection,))
+            thread = threading.Thread(target=self.accept_connection, args=(connection,))
 
             # Start the thread
             thread.start()
@@ -32,8 +33,6 @@ class Suttu:
             # Wait for the thread to finish
             thread.join()
 
-if __name__ == "__main__":
-    suttu = Suttu()
 
 
 
