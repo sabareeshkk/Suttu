@@ -1,1 +1,1 @@
-from suttu import Suttu
+from main import Suttu
