@@ -1,5 +1,5 @@
-from src.parsers.data.HttpRequestDataParser import HttpRequestDataParser
-from src.common.constants import HTTP_CONTENT_LENGTH
+from src.suttu.parsers.data.HttpRequestDataParser import HttpRequestDataParser
+from src.suttu.common import HTTP_CONTENT_LENGTH
 
 class HttpContentLengthParser(HttpRequestDataParser):
     """

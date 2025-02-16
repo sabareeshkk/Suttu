@@ -1,4 +1,4 @@
-from src.parsers.data.HttpRequestDataParser import HttpRequestDataParser
+from src.suttu.parsers.data.HttpRequestDataParser import HttpRequestDataParser
 
 class TransferEncodingParser(HttpRequestDataParser):
     """

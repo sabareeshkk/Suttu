@@ -1,9 +1,9 @@
-from abc import ABC, abstractmethod
+from abc import ABC
 
-from src.request.HttpRequest import HttpRequest
-from src.response.HttpResponse import HttpResponse
+from src.suttu.request.HttpRequest import HttpRequest
+from src.suttu.response.HttpResponse import HttpResponse
 
-from src.Exceptions.InvalidArgumentException import InvalidArgumentException
+from src.suttu.Exceptions.InvalidArgumentException import InvalidArgumentException
 
 
 class App(ABC):

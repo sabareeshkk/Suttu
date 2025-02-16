@@ -1,7 +1,7 @@
-from src.common.constants import REQ_HEADER_SEPERATOR, HTTP_CONTENT_LENGTH, HTTP_TRANSFER_ENCODING
-from src.parsers.data.ContentLengthDataParser import HttpContentLengthParser
-from src.parsers.data.TransferEncodingDataParser import TransferEncodingParser
-from src.parsers.headers.HttpRequestHeaderParser import HttpRequestHeaderParser
+from src.suttu.common import REQ_HEADER_SEPERATOR, HTTP_CONTENT_LENGTH, HTTP_TRANSFER_ENCODING
+from src.suttu.parsers.data.ContentLengthDataParser import HttpContentLengthParser
+from src.suttu.parsers.data.TransferEncodingDataParser import TransferEncodingParser
+from src.suttu.parsers.headers.HttpRequestHeaderParser import HttpRequestHeaderParser
 
 class HttpRequest:
     """
