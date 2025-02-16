@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from src.suttu.common import constants
+from ...common import constants
 
 
 class HttpRequestDataParser(ABC):

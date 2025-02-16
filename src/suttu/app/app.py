@@ -1,9 +1,9 @@
 from abc import ABC
 
-from src.suttu.request.HttpRequest import HttpRequest
-from src.suttu.response.HttpResponse import HttpResponse
+from ..request import HttpRequest
+from ..response import HttpResponse
 
-from src.suttu.Exceptions.InvalidArgumentException import InvalidArgumentException
+from ..Exceptions import InvalidArgumentException
 
 
 class App(ABC):

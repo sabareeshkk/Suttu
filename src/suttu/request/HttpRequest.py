@@ -1,7 +1,5 @@
-from src.suttu.common import REQ_HEADER_SEPERATOR, HTTP_CONTENT_LENGTH, HTTP_TRANSFER_ENCODING
-from src.suttu.parsers.data.ContentLengthDataParser import HttpContentLengthParser
-from src.suttu.parsers.data.TransferEncodingDataParser import TransferEncodingParser
-from src.suttu.parsers.headers.HttpRequestHeaderParser import HttpRequestHeaderParser
+from ..common import REQ_HEADER_SEPERATOR, HTTP_CONTENT_LENGTH, HTTP_TRANSFER_ENCODING
+from ..parsers import ContentLengthParser, RequestHeaderParser, TransferEncodingParser
 
 class HttpRequest:
     """
@@ -49,7 +47,7 @@ class HttpRequest:
         parse the request header
         :return:
         """
-        self.headers = HttpRequestHeaderParser(self.data).headers
+        self.headers = RequestHeaderParser(self.data).headers
 
     def __parse_request_data(self):
         """Parse the request data depending on content type or transfer encoding."""
@@ -68,7 +66,7 @@ class HttpRequest:
     def __parse_with_content_length(self):
         """Parse request data with content length."""
         try:
-            return HttpContentLengthParser(self.connection, self.headers, self.data)
+            return ContentLengthParser(self.connection, self.headers, self.data)
         except Exception as e:
             print(f"Error parsing content length: {e}")
             raise  # Re-raise the exception to propagate it

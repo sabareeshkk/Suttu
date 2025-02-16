@@ -1,1 +1,1 @@
-from src.suttu.parsers.headers.HttpRequestHeaderParser import HttpRequestHeaderParser
+from .RequestHeaderParser import RequestHeaderParser

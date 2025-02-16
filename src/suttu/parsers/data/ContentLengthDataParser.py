@@ -1,7 +1,7 @@
-from src.suttu.parsers.data.HttpRequestDataParser import HttpRequestDataParser
-from src.suttu.common import HTTP_CONTENT_LENGTH
+from .HttpRequestDataParser import HttpRequestDataParser
+from ...common import HTTP_CONTENT_LENGTH
 
-class HttpContentLengthParser(HttpRequestDataParser):
+class ContentLengthParser(HttpRequestDataParser):
     """
     parse http request data based on the content-length header
     """

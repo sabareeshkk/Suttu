@@ -1,8 +1,8 @@
 # helper functions
-from src.suttu.common import constants
+from ...common import constants
 
 
-class HttpRequestHeaderParser:
+class RequestHeaderParser:
     def __init__(self, data):
         self.headers = self.parse(data)
 
