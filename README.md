@@ -11,7 +11,7 @@ pip install -i https://test.pypi.org/simple/ Suttu
 Here is an example of how to use `Suttu` in a simple web application:
 
 ```python
-from src.suttu import Suttu, request
+from Suttu import Suttu, request
 from werkzeug.serving import run_simple
 
 app = Suttu()
